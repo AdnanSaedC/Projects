@@ -18,7 +18,42 @@ document.addEventListener('DOMContentLoaded',()=>{
     tasks.forEach((taskOfInterest) => { displayTask(taskOfInterest) } );
 
     function displayTask(task){
-        console.log(task)
+        const li=document.createElement("li");
+        li.setAttribute("data-id",task.id);
+        li.innerHTML=`<span>${task.text}</span>
+        <button>delete</button>`;
+
+        //this is to strike through the content
+        li.addEventListener("click",(e)=>{
+            if(e.target.tagName === 'BUTTON') return;
+            
+            task.Completed=!task.Completed;
+            li.classList.toggle('completed');
+            saveTaskInTheLocalStorage();
+        })
+
+        //now lets add the functionality to delete button
+        li.querySelector('button').addEventListener('click',(e)=>{
+            //we are selecting the button from the li
+            //and stop propogation is becvause we dont wanrt
+            //to strike through the content
+            e.stopPropagation();
+            tasks=tasks.filter(individualTask => individualTask.id!==task.id)
+            //we have successfully removed the task item from the array
+            //now remove it from the html page itself 
+            li.remove();
+
+            saveTaskInTheLocalStorage()
+
+            /**
+             * what we are doing here is we are running a filter on
+             * task array and each value in the task is extracted and its id
+             * is comapred with the one which is operation
+             * 
+             * now we have included all the functionalities now add it in the ul
+             */
+        })
+        todoList.appendChild(li);
     }
 
     todoListInputButton.addEventListener("click",()=>{
@@ -36,6 +71,7 @@ document.addEventListener('DOMContentLoaded',()=>{
 
         tasks.push(newTask);
         saveTaskInTheLocalStorage();
+        displayTask(newTask);
 
         //lets clean the input field
         todoListInput.value=""
@@ -50,5 +86,13 @@ document.addEventListener('DOMContentLoaded',()=>{
          * in the string format
          */
     }
+
+    const clearButton=document.getElementById("clear-tasks-btn");
+    clearButton.addEventListener("click",(e)=>{
+        e.stopPropagation();
+        tasks=[];
+        saveTaskInTheLocalStorage();
+        todoList.innerHTML="";
+    })
 })
 
