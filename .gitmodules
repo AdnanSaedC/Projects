@@ -1,3 +1,3 @@
 [submodule "06_backend_project"]
 	path = 06_backend_project
-	url = https://github.com/AdnanSaedC/Projects.git
+	url = git@github.com:AdnanSaedC/project_management_software.git
