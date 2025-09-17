@@ -61,6 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function showQuestion() {
     nextBtn.classList.add("hidden");
+    
     questionText.textContent = questions[currentQuestionIndex].question;
     choicesList.innerHTML = ""; //clear previous choices
     questions[currentQuestionIndex].choices.forEach((choice) => {
