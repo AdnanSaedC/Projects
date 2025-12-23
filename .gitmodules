@@ -1,6 +1,8 @@
 [submodule "06_backend_project"]
 	path = 06_backend_project
 	url = git@github.com:AdnanSaedC/project_management_software.git
-[submodule "vidtube"]
+[submodule "07_vidtube"]
 	path = vidtube
 	url = https://github.com/AdnanSaedC/vidTube-project.git
+
+
