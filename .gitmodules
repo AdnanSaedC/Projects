@@ -6,3 +6,6 @@
 	url = https://github.com/AdnanSaedC/vidTube-project.git
 
 
+[submodule "07_vidTube(backend)/vidTube-project"]
+	path = 07_vidTube(backend)/vidTube-project
+	url = https://github.com/AdnanSaedC/vidTube-project.git
