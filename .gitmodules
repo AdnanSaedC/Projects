@@ -9,3 +9,6 @@
 [submodule "07_vidTube(backend)/vidTube-project"]
 	path = 07_vidTube(backend)/vidTube-project
 	url = https://github.com/AdnanSaedC/vidTube-project.git
+[submodule "08_frontendProject(Blog)/blogApplication-frontendProject"]
+	path = 08_frontendProject(Blog)/blogApplication-frontendProject
+	url = https://github.com/AdnanSaedC/blogApplication-frontendProject.git
